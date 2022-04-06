@@ -1,19 +1,23 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Nickname:</strong>
-  <%= @board_user.nickname %>
-</p>
-
-<p>
-  <strong>Account:</strong>
-  <%= @board_user.account_id %>
-</p>
-
-<p>
-  <strong>Memo:</strong>
-  <%= @board_user.memo %>
-</p>
-
-<%= link_to 'Edit', edit_board_user_path(@board_user) %> |
-<%= link_to 'Back', board_users_path %>
+<h1 class="display-4 text-primary">"<%=@board_user.nickname %>"</h1>
+<table class="table">
+  <tr>
+    <th>Nickname</th>
+    <td><%= @board_user.nickname %></td>
+  </tr>
+  <tr>
+    <th>ID</th>
+    <td><%= @board_user.id %></td>
+  </tr>
+  <tr>
+    <th>Created at</th>
+    <td><%= @board_user.created_at %></td>
+  </tr>
+  <tr>
+    <th>Memo</th>
+    <td><%= @board_user.memo %></td>
+  </tr>
+</table>
+<hr>
+<%= link_to '<< Back', controller: :board_message %> |
+<hr>
+<div>copyright SYODA-Tuyano 2022.</div>

@@ -1,31 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Board Users</h1>
+<h1 class="display-4 text-primary">User Home</h1>
+<h2 class="h4"><%=@board_user.account.email %>さんの設定</h2>
+<%= render 'form',board_user: @board_user %>
+<hr>
 
-<table>
-  <thead>
-    <tr>
-      <th>Nickname</th>
-      <th>Account</th>
-      <th>Memo</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<p><%=link_to '<<go back',controller:board_message%></p>
 
-  <tbody>
-    <% @board_users.each do |board_user| %>
-      <tr>
-        <td><%= board_user.nickname %></td>
-        <td><%= board_user.account_id %></td>
-        <td><%= board_user.memo %></td>
-        <td><%= link_to 'Show', board_user %></td>
-        <td><%= link_to 'Edit', edit_board_user_path(board_user) %></td>
-        <td><%= link_to 'Destroy', board_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Board User', new_board_user_path %>
+<hr>
+<div>copyright SYODA-Tuyano 2022.</div>
